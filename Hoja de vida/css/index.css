@@ -1,0 +1,118 @@
+body {
+    margin:0;
+    padding:0;
+    background: #FFF8f0;
+}
+
+.caja {
+    width: 100%;
+    height: 300px;
+    background: #9AD1D4;
+    transform: skewY(-5deg);
+}
+
+.caja .content {
+    width: 50%;
+    height: 50%;
+    position: absolute;
+    left:25%;
+}
+
+.caja .content .p-1 {
+    color: #FFF8F0;
+    font-family: "Tagesschrift", system-ui;
+    font-weight: bolder;
+    font-size: 60px;
+    transform: skewY(5deg);
+    margin-bottom: 0;
+}
+
+.caja .content .p-2 {
+    color: #FFF8F0;
+    font-family: "Tagesschrift", system-ui;
+    font-size: 30px;
+    transform: skewY(5deg);
+    margin-top: 1;
+    margin-bottom: 1;
+}
+
+.caja .img {
+    position: absolute;
+    top: 25%;
+    right: 5%;
+    width: 150px;
+    height: 150px;
+    border-radius: 100%;
+    transform: skewY(5deg);
+    overflow: hidden;
+}
+
+.caja .img img {
+    width: 162px;
+    height: 162px;
+    
+}
+
+.cuadroinfo {
+    width: 90%;
+    height: auto;
+    background: #9AD1D4;
+    margin:5% auto;
+    padding: 20px;
+    border-radius: 20px;
+}
+
+.cuadroinfo .titulo {
+    color: #FFF8F0;
+    font-family: "Tagesschrift", system-ui;
+    font-size: xx-large;
+    text-align: center;
+    font-weight: bolder;
+    border-bottom: 2px #FFF8F0 dashed;
+}
+
+.cuadroinfo .tituloinfo {
+    color: #F0F0F0;
+    font-family: "Tagesschrift", system-ui;
+    font-weight: bolder;
+    font-size: large;
+    display: inline;
+    margin-right: 5px;
+}
+
+.cuadroinfo .descripcion {
+    color: #474A48;
+    font-family: "Tagesschrift", system-ui;
+    font-weight: normal;
+    font-size: large;
+    display: inline;
+    }
+
+    table {
+        border-collapse: collapse;
+        margin: 0 auto;
+        width: 100%;
+        max-width: 800px;
+        background-color: #FFFDD0;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+    
+    th, td {
+        border: 1px solid #cfd8dc;
+        padding: 12px 15px;
+        text-align: center;
+    }
+    
+    th {
+        background-color: #e3f2fd;
+        color: #0d47a1;
+    }
+    
+    tr:nth-child(even) {
+        background-color: #f1f8e9;
+    }
+    
+    tr:hover {
+        background-color: #ffe0b2;
+    }
+    
