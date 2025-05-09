@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Formulario de clientes</title>
+  <link rel="stylesheet" href="css/index.css" />
+</head>
+<body>
+  <div class="background-shape"></div>
+
+  <div class="floating-form">
+    <h2>⚙️ Registro de Cliente</h2>
+
+    <form id="formulario">
+      <input type="text" placeholder="Nombre completo" name="nombre" required />
+      <input type="email" placeholder="Correo electrónico" name="correo" required />
+      <input type="tel" placeholder="Número de teléfono" name="telefono" required />
+      <input type="text" placeholder="Dirección" name="direccion" required />
+      <input type="text" placeholder="Profesion" name="profesion" required />
+      <input type="date" name="fecha" required />
+      <button type="submit">Guardar Cliente</button>
+    </form>
+
+  <script>
+    const formulario = document.querySelector("form");
+
+    formulario.addEventListener("submit", function(evento) {
+        evento.preventDefault(); 
+        alert("✅ Cliente guardado con éxito.");
+        formulario.reset(); 
+    });
+</script>
+</body>
+</html>
+

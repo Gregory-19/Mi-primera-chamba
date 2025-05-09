@@ -1,0 +1,90 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    height: 100vh;
+    background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    position: relative;
+}
+
+/* Fondo con forma oscura animada */
+.background-shape {
+    position: absolute;
+    width: 800px;
+    height: 800px;
+    background: radial-gradient(circle, #1f3b4d, #112d3b);
+    border-radius: 50%;
+    filter: blur(120px);
+    z-index: 0;
+    animation: mover 12s ease-in-out infinite alternate;
+}
+
+@keyframes mover {
+    0% {
+        top: -200px;
+        left: -200px;
+    }
+    100% {
+        top: 150px;
+        left: 100px;
+    }
+}
+
+/* Formulario flotante */
+.floating-form {
+    background: rgba(30, 35, 40, 0.85);
+    backdrop-filter: blur(10px);
+    padding: 40px 30px;
+    border-radius: 20px;
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.5);
+    z-index: 1;
+    max-width: 420px;
+    width: 90%;
+    text-align: center;
+    animation: floatUp 0.6s ease-out;
+    color: #f0f0f0;
+}
+
+h2 {
+    margin-bottom: 25px;
+    color: #00aaff;
+    font-weight: 600;
+}
+
+form input {
+    width: 100%;
+    padding: 12px 14px;
+    margin: 10px 0;
+    border: none;
+    border-radius: 10px;
+    background-color: #1e2a38;
+    color: #e0e0e0;
+    font-size: 15px;
+}
+
+form input:focus {
+    outline: 2px solid #00aaff;
+    background-color: #273747;
+}
+
+button {
+    width: 100%;
+    padding: 12px;
+    margin-top: 15px;
+    background-color: #00aaff;
+    color: white;
+    border: none;
+    border-radius: 12px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #0077cc;
+}
