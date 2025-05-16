@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Operaciones con 2 Números</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+  <style>
+    * {
+      box-sizing: border-box;
+      font-family: 'Roboto', sans-serif;
+    }
+
+    body {
+      background: linear-gradient(120deg, #74ebd5, #9face6);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+      padding: 15px;
+    }
+
+    .container {
+      background-color: white;
+      padding: 30px 25px;
+      border-radius: 15px;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+      max-width: 400px;
+      width: 100%;
+      transition: transform 0.3s ease;
+    }
+
+    .container:hover {
+      transform: scale(1.02);
+    }
+
+    h2 {
+      text-align: center;
+      color: #333;
+      margin-bottom: 20px;
+    }
+
+    input {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 15px;
+      font-size: 16px;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+    }
+
+    button {
+      width: 48%;
+      padding: 10px;
+      font-size: 16px;
+      margin: 5px 1%;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: background 0.3s ease;
+    }
+
+    .calcular {
+      background-color: #007bff;
+      color: white;
+    }
+
+    .calcular:hover {
+      background-color: #0056b3;
+    }
+
+    .limpiar {
+      background-color: #6c757d;
+      color: white;
+    }
+
+    .limpiar:hover {
+      background-color: #5a6268;
+    }
+
+    #resultados {
+      margin-top: 20px;
+    }
+
+    .resultado {
+      background-color: #f8f9fa;
+      padding: 10px;
+      border-radius: 6px;
+      margin-bottom: 8px;
+      border-left: 4px solid #007bff;
+    }
+
+    .error {
+      color: red;
+      font-weight: bold;
+      margin-bottom: 10px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h2>Calculadora de Iteraciones</h2>
+    <input type="number" id="num1" placeholder="Ingrese el primer número">
+    <input type="number" id="num2" placeholder="Ingrese el segundo número">
+    <div style="display: flex; justify-content: space-between; flex-wrap: wrap;">
+      <button class="calcular" onclick="realizarIteraciones()">Calcular</button>
+      <button class="limpiar" onclick="limpiarFormulario()">Limpiar</button>
+    </div>
+    <div id="resultados"></div>
+  </div>
+
+  <script>
+    function realizarIteraciones() {
+      const a = parseFloat(document.getElementById('num1').value);
+      const b = parseFloat(document.getElementById('num2').value);
+      const resultados = document.getElementById('resultados');
+      resultados.innerHTML = ''; // Limpiar resultados anteriores
+
+      if (isNaN(a) || isNaN(b)) {
+        resultados.innerHTML = '<div class="error">⚠️ Por favor, ingrese dos números válidos.</div>';
+        return;
+      }
+
+      for (let i = 1; i <= 5; i++) {
+        let resultadoTexto = '';
+        switch(i) {
+          case 1:
+            resultadoTexto = `Iteración 1 (Suma): ${a} + ${b} = ${a + b}`;
+            break;
+          case 2:
+            resultadoTexto = `Iteración 2 (Resta): ${a} - ${b} = ${a - b}`;
+            break;
+          case 3:
+            resultadoTexto = `Iteración 3 (Multiplicación): ${a} × ${b} = ${a * b}`;
+            break;
+          case 4:
+            resultadoTexto = b !== 0 ?
+              `Iteración 4 (División): ${a} ÷ ${b} = ${(a / b).toFixed(2)}` :
+              `Iteración 4 (División): ❌ No se puede dividir entre 0`;
+            break;
+          case 5:
+            resultadoTexto = b !== 0 ?
+              `Iteración 5 (Módulo): ${a} % ${b} = ${a % b}` :
+              `Iteración 5 (Módulo): ❌ No se puede calcular módulo con 0`;
+            break;
+        }
+        const p = document.createElement('div');
+        p.className = 'resultado';
+        p.textContent = resultadoTexto;
+        resultados.appendChild(p);
+      }
+    }
+
+    function limpiarFormulario() {
+      document.getElementById('num1').value = '';
+      document.getElementById('num2').value = '';
+      document.getElementById('resultados').innerHTML = '';
+    }
+  </script>
+</body>
+</html>
